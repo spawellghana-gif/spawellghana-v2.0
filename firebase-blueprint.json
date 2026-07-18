@@ -1,0 +1,169 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Lead",
+      "description": "Sales lead and enquiry records for SpaWellGhana",
+      "type": "object",
+      "properties": {
+        "firstName": { "type": "string", "description": "First name of the lead" },
+        "lastName": { "type": "string", "description": "Last name of the lead" },
+        "phone": { "type": "string", "description": "Contact phone number" },
+        "email": { "type": "string", "description": "Optional email address" },
+        "source": { "type": "string", "description": "Where the lead came from" },
+        "channel": { "type": "string", "description": "How the enquiry was received" },
+        "area": { "type": "string", "description": "Customer location area in Accra" },
+        "status": { "type": "string", "description": "Lead status" },
+        "dateReceived": { "type": "string", "description": "Date lead was received (DD/MM/YYYY)" },
+        "notes": { "type": "string", "description": "Enquiry and conversation notes" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "description": "Update timestamp" },
+        "isDeleted": { "type": "boolean", "description": "Soft deletion flag" }
+      },
+      "required": ["firstName", "lastName", "phone", "source", "channel", "area", "status"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Converted customer database profiles",
+      "type": "object",
+      "properties": {
+        "firstName": { "type": "string", "description": "First name" },
+        "lastName": { "type": "string", "description": "Last name" },
+        "phone": { "type": "string", "description": "Contact phone number" },
+        "email": { "type": "string", "description": "Email address" },
+        "area": { "type": "string", "description": "Accra neighborhood area" },
+        "firstBookingDate": { "type": "string", "description": "First appointment date" },
+        "lastBookingDate": { "type": "string", "description": "Most recent appointment date" },
+        "totalBookings": { "type": "number", "description": "Total number of bookings" },
+        "lifetimeRevenue": { "type": "number", "description": "Total spent in GHS" },
+        "preferredService": { "type": "string", "description": "Preferred service" },
+        "notes": { "type": "string", "description": "Customer profile notes" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "description": "Update timestamp" },
+        "isDeleted": { "type": "boolean", "description": "Soft deletion flag" }
+      },
+      "required": ["firstName", "phone", "area"]
+    },
+    "Service": {
+      "title": "Service",
+      "description": "Preloaded and active spa services menu",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Service name" },
+        "duration": { "type": "number", "description": "Duration in minutes" },
+        "price": { "type": "number", "description": "Standard price in GHS" },
+        "isActive": { "type": "boolean", "description": "Active status indicator" },
+        "description": { "type": "string", "description": "Detailed description of the massage service" },
+        "isDeleted": { "type": "boolean", "description": "Soft deletion flag" }
+      },
+      "required": ["name", "duration", "price", "isActive"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Booking and deal stage transactions",
+      "type": "object",
+      "properties": {
+        "customerId": { "type": "string", "description": "Associated customer ID" },
+        "customerFirstName": { "type": "string", "description": "First name" },
+        "customerLastName": { "type": "string", "description": "Last name" },
+        "customerPhone": { "type": "string", "description": "Customer phone" },
+        "customerEmail": { "type": "string", "description": "Customer email" },
+        "serviceId": { "type": "string", "description": "Service reference ID" },
+        "serviceName": { "type": "string", "description": "Service name" },
+        "appointmentDate": { "type": "string", "description": "Date of appointment (DD/MM/YYYY)" },
+        "appointmentTime": { "type": "string", "description": "Time of appointment (HH:MM)" },
+        "area": { "type": "string", "description": "Location area in Accra" },
+        "address": { "type": "string", "description": "Full service delivery address" },
+        "therapist": { "type": "string", "description": "Therapist assigned" },
+        "stage": { "type": "string", "description": "Deal status/stage" },
+        "quotedAmount": { "type": "number", "description": "Quoted GHS cost" },
+        "discount": { "type": "number", "description": "Discount in GHS" },
+        "travelFee": { "type": "number", "description": "Travel/dispatch fee in GHS" },
+        "finalAmount": { "type": "number", "description": "Calculated final price in GHS" },
+        "amountPaid": { "type": "number", "description": "Total paid in GHS" },
+        "balance": { "type": "number", "description": "Outstanding balance in GHS" },
+        "paymentStatus": { "type": "string", "description": "Payment status" },
+        "lostReason": { "type": "string", "description": "Lost reason, if applicable" },
+        "notes": { "type": "string", "description": "Booking notes" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "description": "Update timestamp" },
+        "isDeleted": { "type": "boolean", "description": "Soft deletion flag" }
+      },
+      "required": ["customerId", "serviceId", "appointmentDate", "appointmentTime", "area", "address", "stage", "quotedAmount", "amountPaid", "paymentStatus"]
+    },
+    "Employee": {
+      "title": "Employee",
+      "description": "SpaWellGhana staff and therapists directory profiles",
+      "type": "object",
+      "properties": {
+        "firstName": { "type": "string", "description": "First name of employee" },
+        "lastName": { "type": "string", "description": "Last name of employee" },
+        "mobileNumber": { "type": "string", "description": "Phone number" },
+        "email": { "type": "string", "description": "Email address" },
+        "gender": { "type": "string", "description": "Gender" },
+        "dateOfBirth": { "type": "string", "description": "Birth date (YYYY-MM-DD)" },
+        "position": { "type": "string", "description": "Job position" },
+        "employmentType": { "type": "string", "description": "Full Time, Part Time, Contract, Freelance" },
+        "department": { "type": "string", "description": "Department" },
+        "dateJoined": { "type": "string", "description": "Join date" },
+        "status": { "type": "string", "description": "Active, On Leave, Suspended, Resigned" },
+        "homeAddress": { "type": "string", "description": "Home address" },
+        "emergencyContact": { "type": "string", "description": "Emergency contact name" },
+        "emergencyPhone": { "type": "string", "description": "Emergency contact phone" },
+        "skills": { "type": "string", "description": "Skills and certifications list" },
+        "notes": { "type": "string", "description": "Internal notes" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "description": "Update timestamp" },
+        "isDeleted": { "type": "boolean", "description": "Soft deletion flag" }
+      },
+      "required": ["firstName", "lastName", "mobileNumber", "position", "employmentType", "status"]
+    },
+    "Partner": {
+      "title": "Partner",
+      "description": "Referral partners and business details",
+      "type": "object",
+      "properties": {
+        "businessName": { "type": "string", "description": "Name of the business" },
+        "contactPerson": { "type": "string", "description": "Primary contact person" },
+        "phone": { "type": "string", "description": "Contact phone number" },
+        "email": { "type": "string", "description": "Contact email address" },
+        "area": { "type": "string", "description": "Location area in Accra" },
+        "partnerType": { "type": "string", "description": "Type of business partner" },
+        "commissionPercentage": { "type": "number", "description": "Commission rate (GHS or %)" },
+        "commissionType": { "type": "string", "description": "Fixed or Percentage" },
+        "status": { "type": "string", "description": "Active, Inactive" },
+        "dateJoined": { "type": "string", "description": "Join date" },
+        "notes": { "type": "string", "description": "Collaboration notes" },
+        "createdAt": { "type": "string", "description": "Creation timestamp" },
+        "updatedAt": { "type": "string", "description": "Update timestamp" },
+        "isDeleted": { "type": "boolean", "description": "Soft deletion flag" }
+      },
+      "required": ["businessName", "contactPerson", "phone", "partnerType", "commissionPercentage", "commissionType", "status"]
+    }
+  },
+  "firestore": {
+    "/leads/{leadId}": {
+      "schema": "Lead",
+      "description": "SpaWellGhana Leads/enquiries collection"
+    },
+    "/customers/{customerId}": {
+      "schema": "Customer",
+      "description": "SpaWellGhana Customers list"
+    },
+    "/services/{serviceId}": {
+      "schema": "Service",
+      "description": "SpaWellGhana Services catalog"
+    },
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "SpaWellGhana Bookings and transactions"
+    },
+    "/employees/{employeeId}": {
+      "schema": "Employee",
+      "description": "SpaWellGhana employees directory"
+    },
+    "/partners/{partnerId}": {
+      "schema": "Partner",
+      "description": "SpaWellGhana referral partners directory"
+    }
+  }
+}

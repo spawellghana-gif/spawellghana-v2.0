@@ -1,0 +1,6 @@
+{
+  "name": "SpaWellGhana CRM",
+  "description": "Customized Zoho-style CRM for SpaWellGhana Mobile Massage to manage appointments, therapist schedules, client records, automated SMS/email templates, and marketing campaigns with pipeline and ROI dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "grand-device-rthgf"
+  },
+  "targets": {
+    "grand-device-rthgf": {
+      "firestore": {
+        "spawell_db": [
+          "ai-studio-06da014c-1040-4638-8415-8d37f8fdd5fe"
+        ]
+      }
+    }
+  }
+}
